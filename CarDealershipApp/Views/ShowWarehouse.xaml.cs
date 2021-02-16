@@ -51,8 +51,8 @@ namespace CarDealershipApp.Views
 
         private void BackF(object sender, RoutedEventArgs e)
         {
-            var menu = new Menu();
-            NavigationService.Navigate(menu);
+            var back = new CarManager();
+            NavigationService.Navigate(back);
         }
     }
 }

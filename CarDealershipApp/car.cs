@@ -30,5 +30,10 @@ namespace CarDealershipApp
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<sale> sales { get; set; }
+        /*
+        public static implicit operator car(car v)
+        {
+            throw new NotImplementedException();
+        }*/
     }
 }

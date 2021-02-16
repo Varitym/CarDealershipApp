@@ -24,5 +24,30 @@ namespace CarDealershipApp.Views
         {
             InitializeComponent();
         }
+
+        private void AddCarFn(object sender, RoutedEventArgs e)
+        {
+            CarDealershipAppDBEntities db = new CarDealershipAppDBEntities();
+
+            car carObj = new car()
+            {
+                brand = txtBrand.Text,
+                model = txtModel.Text,
+                colour = txtColour.Text,
+                prod_date = Int32.Parse(txtProd.Text),
+                price = Int32.Parse(txtPrice.Text),
+                quantity = Int32.Parse(txtQuantity.Text),
+            };
+
+            db.cars.Add(carObj);
+            db.SaveChanges();
+
+        }
+
+        private void ShowFn(object sender, RoutedEventArgs e)
+        {
+            var show = new ShowWarehouse();
+            NavigationService.Navigate(show);
+        }
     }
 }

@@ -34,7 +34,8 @@ namespace CarDealershipApp.Views
 
         private void DeleteCarF(object sender, RoutedEventArgs e)
         {
-
+            var del = new DeleteCar();
+            NavigationService.Navigate(del);
         }
 
         private void ShowWarehouseF(object sender, RoutedEventArgs e)
@@ -45,8 +46,14 @@ namespace CarDealershipApp.Views
 
         private void BackF(object sender, RoutedEventArgs e)
         {
-            var back = new CarManager();
+            var back = new Menu();
             NavigationService.Navigate(back);
+        }
+
+        private void AddFn(object sender, RoutedEventArgs e)
+        {
+            var add = new AddCar();
+            NavigationService.Navigate(add);
         }
     }
 }
