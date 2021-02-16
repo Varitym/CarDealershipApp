@@ -16,24 +16,13 @@ using System.Windows.Shapes;
 namespace CarDealershipApp.Views
 {
     /// <summary>
-    /// Logika interakcji dla klasy Menu.xaml
+    /// Logika interakcji dla klasy AddCar.xaml
     /// </summary>
-    public partial class Menu : Page
+    public partial class AddCar : Page
     {
-        public Menu()
+        public AddCar()
         {
             InitializeComponent();
-        }
-
-        private void ManageCarsF(object sender, RoutedEventArgs e)
-        {
-            var manager = new CarManager();
-            NavigationService.Navigate(manager);
-        }
-
-        private void SaleF(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

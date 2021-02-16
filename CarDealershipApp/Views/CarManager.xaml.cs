@@ -23,31 +23,30 @@ namespace CarDealershipApp.Views
         public CarManager()
         {
             InitializeComponent();
+            
 
-            CarDealershipAppDBEntities db = new CarDealershipAppDBEntities();
-            var cars = from c in db.cars
-                       select new
-                       {
-                           carBrand = c.brand,
-                           carModel = c.model,
-                           carPrice = c.price,
-                           carQuantity = c.quantity,
-                           carColour = c.colour,
-                           carProd = c.prod_date
-                       };
+        }
 
-            foreach (var item in cars)
-            {
-                Console.WriteLine(item.carBrand);
-                Console.WriteLine(item.carModel);
-                Console.WriteLine(item.carColour);
-                Console.WriteLine(item.carPrice);
-                Console.WriteLine(item.carQuantity);
-                Console.WriteLine(item.carProd);
-            }
+        private void AddCarF(object sender, RoutedEventArgs e)
+        {
 
-            this.gridCars.ItemsSource = cars.ToList();
+        }
 
+        private void DeleteCarF(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ShowWarehouseF(object sender, RoutedEventArgs e)
+        {
+            var show = new ShowWarehouse();
+            NavigationService.Navigate(show);
+        }
+
+        private void BackF(object sender, RoutedEventArgs e)
+        {
+            var back = new CarManager();
+            NavigationService.Navigate(back);
         }
     }
 }

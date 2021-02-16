@@ -99,11 +99,20 @@
     <Compile Include="sale.cs">
       <DependentUpon>CarDealershipApp.tt</DependentUpon>
     </Compile>
+    <Compile Include="Views\AddCar.xaml.cs">
+      <DependentUpon>AddCar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CarManager.xaml.cs">
       <DependentUpon>CarManager.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\DeleteCar.xaml.cs">
+      <DependentUpon>DeleteCar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowWarehouse.xaml.cs">
+      <DependentUpon>ShowWarehouse.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -127,11 +136,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AddCar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CarManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\DeleteCar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShowWarehouse.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,17 @@
+﻿<Page x:Class="CarDealershipApp.Views.ShowWarehouse"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CarDealershipApp.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ShowWarehouse">
+
+    <Grid>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="440" Stroke="Black" VerticalAlignment="Top" Width="800"/>
+        <DataGrid x:Name="gridCars" HorizontalAlignment="Left" Height="337" VerticalAlignment="Top" Width="800"/>
+        <Button Content="Wstecz" Click="BackF" HorizontalAlignment="Left" Margin="290,363,0,0" VerticalAlignment="Top" Width="182" Height="60" FontSize="24"/>
+
+    </Grid>
+</Page>
