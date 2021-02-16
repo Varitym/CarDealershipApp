@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CarDealershipAppDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="cars">
+          <Key>
+            <PropertyRef Name="car_id" />
+          </Key>
+          <Property Name="car_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="brand" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="model" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="price" Type="money" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="prod_date" Type="int" Nullable="false" />
+          <Property Name="colour" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="customers">
+          <Key>
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Name="customer_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="surname" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="pesel" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="city" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="nip" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="dealers">
+          <Key>
+            <PropertyRef Name="dealer_id" />
+          </Key>
+          <Property Name="dealer_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="15" />
+          <Property Name="surname" Type="nchar" MaxLength="15" />
+          <Property Name="pesel" Type="nchar" MaxLength="11" />
+          <Property Name="employment_date" Type="int" />
+        </EntityType>
+        <EntityType Name="sales">
+          <Key>
+            <PropertyRef Name="sale_id" />
+          </Key>
+          <Property Name="sale_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="dealer_id" Type="int" Nullable="false" />
+          <Property Name="car_id" Type="int" Nullable="false" />
+          <Property Name="transaction_amount" Type="money" />
+          <Property Name="on_company" Type="tinyint" />
+        </EntityType>
+        <Association Name="FK_sales_cars">
+          <End Role="cars" Type="Self.cars" Multiplicity="1" />
+          <End Role="sales" Type="Self.sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cars">
+              <PropertyRef Name="car_id" />
+            </Principal>
+            <Dependent Role="sales">
+              <PropertyRef Name="car_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sales_customers">
+          <End Role="customers" Type="Self.customers" Multiplicity="1" />
+          <End Role="sales" Type="Self.sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customers">
+              <PropertyRef Name="customer_id" />
+            </Principal>
+            <Dependent Role="sales">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sales_dealers">
+          <End Role="dealers" Type="Self.dealers" Multiplicity="1" />
+          <End Role="sales" Type="Self.sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dealers">
+              <PropertyRef Name="dealer_id" />
+            </Principal>
+            <Dependent Role="sales">
+              <PropertyRef Name="dealer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CarDealershipAppDBModelStoreContainer">
+          <EntitySet Name="cars" EntityType="Self.cars" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customers" EntityType="Self.customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dealers" EntityType="Self.dealers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sales" EntityType="Self.sales" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_sales_cars" Association="Self.FK_sales_cars">
+            <End Role="cars" EntitySet="cars" />
+            <End Role="sales" EntitySet="sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sales_customers" Association="Self.FK_sales_customers">
+            <End Role="customers" EntitySet="customers" />
+            <End Role="sales" EntitySet="sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sales_dealers" Association="Self.FK_sales_dealers">
+            <End Role="dealers" EntitySet="dealers" />
+            <End Role="sales" EntitySet="sales" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CarDealershipAppDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="car">
+          <Key>
+            <PropertyRef Name="car_id" />
+          </Key>
+          <Property Name="car_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="brand" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="model" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <Property Name="prod_date" Type="Int32" Nullable="false" />
+          <Property Name="colour" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="sales" Relationship="Self.FK_sales_cars" FromRole="cars" ToRole="sales" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Name="customer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="surname" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="pesel" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="city" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="nip" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="sales" Relationship="Self.FK_sales_customers" FromRole="customers" ToRole="sales" />
+        </EntityType>
+        <EntityType Name="dealer">
+          <Key>
+            <PropertyRef Name="dealer_id" />
+          </Key>
+          <Property Name="dealer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="surname" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="pesel" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="employment_date" Type="Int32" />
+          <NavigationProperty Name="sales" Relationship="Self.FK_sales_dealers" FromRole="dealers" ToRole="sales" />
+        </EntityType>
+        <EntityType Name="sale">
+          <Key>
+            <PropertyRef Name="sale_id" />
+          </Key>
+          <Property Name="sale_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="dealer_id" Type="Int32" Nullable="false" />
+          <Property Name="car_id" Type="Int32" Nullable="false" />
+          <Property Name="transaction_amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="on_company" Type="Byte" />
+          <NavigationProperty Name="car" Relationship="Self.FK_sales_cars" FromRole="sales" ToRole="cars" />
+          <NavigationProperty Name="customer" Relationship="Self.FK_sales_customers" FromRole="sales" ToRole="customers" />
+          <NavigationProperty Name="dealer" Relationship="Self.FK_sales_dealers" FromRole="sales" ToRole="dealers" />
+        </EntityType>
+        <Association Name="FK_sales_cars">
+          <End Role="cars" Type="Self.car" Multiplicity="1" />
+          <End Role="sales" Type="Self.sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cars">
+              <PropertyRef Name="car_id" />
+            </Principal>
+            <Dependent Role="sales">
+              <PropertyRef Name="car_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sales_customers">
+          <End Role="customers" Type="Self.customer" Multiplicity="1" />
+          <End Role="sales" Type="Self.sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customers">
+              <PropertyRef Name="customer_id" />
+            </Principal>
+            <Dependent Role="sales">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sales_dealers">
+          <End Role="dealers" Type="Self.dealer" Multiplicity="1" />
+          <End Role="sales" Type="Self.sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dealers">
+              <PropertyRef Name="dealer_id" />
+            </Principal>
+            <Dependent Role="sales">
+              <PropertyRef Name="dealer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CarDealershipAppDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="cars" EntityType="Self.car" />
+          <EntitySet Name="customers" EntityType="Self.customer" />
+          <EntitySet Name="dealers" EntityType="Self.dealer" />
+          <EntitySet Name="sales" EntityType="Self.sale" />
+          <AssociationSet Name="FK_sales_cars" Association="Self.FK_sales_cars">
+            <End Role="cars" EntitySet="cars" />
+            <End Role="sales" EntitySet="sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sales_customers" Association="Self.FK_sales_customers">
+            <End Role="customers" EntitySet="customers" />
+            <End Role="sales" EntitySet="sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sales_dealers" Association="Self.FK_sales_dealers">
+            <End Role="dealers" EntitySet="dealers" />
+            <End Role="sales" EntitySet="sales" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CarDealershipAppDBModelStoreContainer" CdmEntityContainer="CarDealershipAppDBEntities">
+          <EntitySetMapping Name="cars">
+            <EntityTypeMapping TypeName="CarDealershipAppDBModel.car">
+              <MappingFragment StoreEntitySet="cars">
+                <ScalarProperty Name="car_id" ColumnName="car_id" />
+                <ScalarProperty Name="brand" ColumnName="brand" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="prod_date" ColumnName="prod_date" />
+                <ScalarProperty Name="colour" ColumnName="colour" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="CarDealershipAppDBModel.customer">
+              <MappingFragment StoreEntitySet="customers">
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="pesel" ColumnName="pesel" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="nip" ColumnName="nip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dealers">
+            <EntityTypeMapping TypeName="CarDealershipAppDBModel.dealer">
+              <MappingFragment StoreEntitySet="dealers">
+                <ScalarProperty Name="dealer_id" ColumnName="dealer_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="pesel" ColumnName="pesel" />
+                <ScalarProperty Name="employment_date" ColumnName="employment_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sales">
+            <EntityTypeMapping TypeName="CarDealershipAppDBModel.sale">
+              <MappingFragment StoreEntitySet="sales">
+                <ScalarProperty Name="sale_id" ColumnName="sale_id" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="dealer_id" ColumnName="dealer_id" />
+                <ScalarProperty Name="car_id" ColumnName="car_id" />
+                <ScalarProperty Name="transaction_amount" ColumnName="transaction_amount" />
+                <ScalarProperty Name="on_company" ColumnName="on_company" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

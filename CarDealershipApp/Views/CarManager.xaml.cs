@@ -1,0 +1,53 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace CarDealershipApp.Views
+{
+    /// <summary>
+    /// Logika interakcji dla klasy CarManager.xaml
+    /// </summary>
+    public partial class CarManager : Page
+    {
+        public CarManager()
+        {
+            InitializeComponent();
+
+            CarDealershipAppDBEntities db = new CarDealershipAppDBEntities();
+            var cars = from c in db.cars
+                       select new
+                       {
+                           carBrand = c.brand,
+                           carModel = c.model,
+                           carPrice = c.price,
+                           carQuantity = c.quantity,
+                           carColour = c.colour,
+                           carProd = c.prod_date
+                       };
+
+            foreach (var item in cars)
+            {
+                Console.WriteLine(item.carBrand);
+                Console.WriteLine(item.carModel);
+                Console.WriteLine(item.carColour);
+                Console.WriteLine(item.carPrice);
+                Console.WriteLine(item.carQuantity);
+                Console.WriteLine(item.carProd);
+            }
+
+            this.gridCars.ItemsSource = cars.ToList();
+
+        }
+    }
+}
