@@ -9,6 +9,11 @@
       Title="DeleteCar">
 
     <Grid>
-        
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="450" Stroke="Black" VerticalAlignment="Top" Width="800"/>
+        <DataGrid x:Name="gridCars" HorizontalAlignment="Left" Height="265" Margin="0,0,0,175" VerticalAlignment="Bottom" Width="800" SelectionChanged="DataGrid_SelectionChanged"/>
+        <Button Content="Delete Car" Click="DelBtn" HorizontalAlignment="Left" Height="96" Margin="590,314,0,0" VerticalAlignment="Top" Width="200"/>
+        <Button Content="Refresh Warehouse" Click="RefreshFn" HorizontalAlignment="Left" Height="96" Margin="317,314,0,0" VerticalAlignment="Top" Width="200"/>
+        <Button Content="Back" Click="BackFn" HorizontalAlignment="Left" Height="96" Margin="43,314,0,0" VerticalAlignment="Top" Width="200"/>
+
     </Grid>
 </Page>

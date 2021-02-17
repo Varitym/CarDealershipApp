@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace CarDealershipApp.Views
 {
     /// <summary>
@@ -41,6 +42,7 @@ namespace CarDealershipApp.Views
 
             db.cars.Add(carObj);
             db.SaveChanges();
+            
 
         }
 

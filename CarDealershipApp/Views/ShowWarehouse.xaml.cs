@@ -20,9 +20,37 @@ namespace CarDealershipApp.Views
     /// </summary>
     public partial class ShowWarehouse : Page
     {
+        public void Show()
+        {
+            CarDealershipAppDBEntities db = new CarDealershipAppDBEntities();
+            var cars = from c in db.cars
+                       select new
+                       {
+                           carBrand = c.brand,
+                           carModel = c.model,
+                           carPrice = c.price,
+                           carQuantity = c.quantity,
+                           carColour = c.colour,
+                           carProd = c.prod_date
+                       };
+
+            foreach (var item in cars)
+            {
+                Console.WriteLine(item.carBrand);
+                Console.WriteLine(item.carModel);
+                Console.WriteLine(item.carColour);
+                Console.WriteLine(item.carPrice);
+                Console.WriteLine(item.carQuantity);
+                Console.WriteLine(item.carProd);
+            }
+
+            this.gridCars.ItemsSource = cars.ToList();
+        }
+    
         public ShowWarehouse()
         {
             InitializeComponent();
+            Show();
 
             CarDealershipAppDBEntities db = new CarDealershipAppDBEntities();
             var cars = from c in db.cars
