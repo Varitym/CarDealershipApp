@@ -34,9 +34,9 @@ namespace CarDealershipApp.Views
                 brand = txtBrand.Text,
                 model = txtModel.Text,
                 colour = txtColour.Text,
-                prod_date = Int32.Parse(txtProd.Text),
-                price = Int32.Parse(txtPrice.Text),
-                quantity = Int32.Parse(txtQuantity.Text),
+                prod_date = int.Parse(txtProd.Text),
+                price = decimal.Parse(txtPrice.Text),
+                quantity = int.Parse(txtQuantity.Text),
             };
 
             db.cars.Add(carObj);
