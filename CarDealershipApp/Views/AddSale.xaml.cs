@@ -32,7 +32,6 @@ namespace CarDealershipApp.Views
                            carBrand = c.brand,
                            carModel = c.model,
                            carPrice = c.price,
-                           carQuantity = c.quantity,
                            carColour = c.colour,
                            carProd = c.prod_date
                        };
@@ -66,7 +65,6 @@ namespace CarDealershipApp.Views
                 Console.WriteLine(item.carModel);
                 Console.WriteLine(item.carColour);
                 Console.WriteLine(item.carPrice);
-                Console.WriteLine(item.carQuantity);
                 Console.WriteLine(item.carProd);
             }
 

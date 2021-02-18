@@ -11,7 +11,7 @@
     <Grid>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="440" Stroke="Black" VerticalAlignment="Top" Width="800"/>
         <DataGrid x:Name="gridCars" HorizontalAlignment="Left" Height="337" VerticalAlignment="Top" Width="800"/>
-        <Button Content="Wstecz" Click="BackF" HorizontalAlignment="Left" Margin="290,363,0,0" VerticalAlignment="Top" Width="182" Height="60" FontSize="24"/>
+        <Button Content="Back" Click="BackF" HorizontalAlignment="Left" Margin="290,363,0,0" VerticalAlignment="Top" Width="182" Height="60" FontSize="24"/>
 
     </Grid>
 </Page>

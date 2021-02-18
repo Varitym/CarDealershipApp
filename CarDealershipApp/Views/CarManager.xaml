@@ -13,7 +13,7 @@
         <Button Content="Add a car to the store" Click="AddFn" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="219" Height="93" FontSize="22"/>
         <Button Content="Delete a car from the store" Click="DeleteCarF" HorizontalAlignment="Left" Margin="571,10,0,0" VerticalAlignment="Top" Width="219" Height="93" FontSize="18"/>
         <Button Content="Show Warehouse" Click="ShowWarehouseF" HorizontalAlignment="Left" Margin="290,10,0,0" VerticalAlignment="Top" Width="219" Height="93" FontSize="24"/>
-        <Button Content="Wstecz" Click="BackF" HorizontalAlignment="Left" Height="81" Margin="290,359,0,0" VerticalAlignment="Top" Width="219"/>
+        <Button Content="Back" Click="BackF" HorizontalAlignment="Left" Height="81" Margin="290,359,0,0" VerticalAlignment="Top" Width="219"/>
 
     </Grid>
 </Page>

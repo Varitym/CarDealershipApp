@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CarDealershipAppDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CarDealershipAppDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="cars">
           <Key>
             <PropertyRef Name="car_id" />
@@ -13,7 +13,6 @@
           <Property Name="brand" Type="nchar" MaxLength="15" Nullable="false" />
           <Property Name="model" Type="nchar" MaxLength="15" Nullable="false" />
           <Property Name="price" Type="money" Nullable="false" />
-          <Property Name="quantity" Type="int" Nullable="false" />
           <Property Name="prod_date" Type="int" Nullable="false" />
           <Property Name="colour" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
@@ -103,8 +102,7 @@
             <End Role="sales" EntitySet="sales" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CarDealershipAppDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -116,7 +114,6 @@
           <Property Name="brand" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="model" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="quantity" Type="Int32" Nullable="false" />
           <Property Name="prod_date" Type="Int32" Nullable="false" />
           <Property Name="colour" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <NavigationProperty Name="sales" Relationship="Self.FK_sales_cars" FromRole="cars" ToRole="sales" />
@@ -225,7 +222,6 @@
                 <ScalarProperty Name="brand" ColumnName="brand" />
                 <ScalarProperty Name="model" ColumnName="model" />
                 <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="quantity" ColumnName="quantity" />
                 <ScalarProperty Name="prod_date" ColumnName="prod_date" />
                 <ScalarProperty Name="colour" ColumnName="colour" />
               </MappingFragment>

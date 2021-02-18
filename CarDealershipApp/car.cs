@@ -24,16 +24,10 @@ namespace CarDealershipApp
         public string brand { get; set; }
         public string model { get; set; }
         public decimal price { get; set; }
-        public int quantity { get; set; }
         public int prod_date { get; set; }
         public string colour { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<sale> sales { get; set; }
-        /*
-        public static implicit operator car(car v)
-        {
-            throw new NotImplementedException();
-        }*/
     }
 }
