@@ -114,6 +114,15 @@
     <Compile Include="Views\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RegisterCustomer.xaml.cs">
+      <DependentUpon>RegisterCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterDealer.xaml.cs">
+      <DependentUpon>RegisterDealer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterMenu.xaml.cs">
+      <DependentUpon>RegisterMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Sale.xaml.cs">
       <DependentUpon>Sale.xaml</DependentUpon>
     </Compile>
@@ -162,6 +171,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegisterCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegisterDealer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegisterMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

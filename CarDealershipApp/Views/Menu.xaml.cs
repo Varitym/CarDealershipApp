@@ -36,5 +36,11 @@ namespace CarDealershipApp.Views
             var sale = new Sale();
             NavigationService.Navigate(sale);
         }
+
+        private void RegisterFn(object sender, RoutedEventArgs e)
+        {
+            var register = new RegisterMenu();
+            NavigationService.Navigate(register);
+        }
     }
 }

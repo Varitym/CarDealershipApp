@@ -12,7 +12,7 @@
             <ColumnDefinition Width="1013*"/>
             <ColumnDefinition Width="11*"/>
         </Grid.ColumnDefinitions>
-        <Rectangle Fill="#FFF4F4F5" Height="714" Stroke="Black" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Rectangle Fill="#FFF4F4F5" Height="442" Stroke="Black" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <DataGrid x:Name="gridClients" HorizontalAlignment="Left" Height="153" Margin="10,10,0,0" VerticalAlignment="Top" Width="319"/>
         <DataGrid x:Name="gridDealers" HorizontalAlignment="Left" Height="153" Margin="360,10,0,0" VerticalAlignment="Top" Width="268"/>
         <DataGrid x:Name="gridCars" HorizontalAlignment="Left" Height="153" Margin="650,10,0,0" VerticalAlignment="Top" Width="326"/>
@@ -25,6 +25,8 @@
         <Label Content="Type in clients id" HorizontalAlignment="Left" Margin="10,187,0,0" VerticalAlignment="Top" Height="40" Width="105"/>
         <Label Content="Type in dealers id" HorizontalAlignment="Left" Margin="360,187,0,0" VerticalAlignment="Top" Height="40" Width="105"/>
         <Label Content="Type in car id" HorizontalAlignment="Left" Margin="650,187,0,0" VerticalAlignment="Top" Height="40" Width="105"/>
+        <Button Content="Show Sales" Click="ShowSalesFn" HorizontalAlignment="Left" Height="69" Margin="398,322,0,0" VerticalAlignment="Top" Width="201"/>
+
 
 
     </Grid>

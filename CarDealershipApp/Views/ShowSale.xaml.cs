@@ -53,19 +53,12 @@ namespace CarDealershipApp.Views
             this.gridSales.ItemsSource = sales.ToList();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void BackFn(object sender, RoutedEventArgs e)
         {
-
+            var back = new Sale();
+            NavigationService.Navigate(back);
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
+     
     }
 }

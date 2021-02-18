@@ -1,0 +1,32 @@
+﻿<Page x:Class="CarDealershipApp.Views.RegisterCustomer"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CarDealershipApp.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegisterCustomer">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="449*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="450" Stroke="Black" VerticalAlignment="Top" Width="800" Grid.RowSpan="2"/>
+        <Label Content="Name" HorizontalAlignment="Left" Height="35" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="138"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="36" Margin="165,9,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="187"/>
+        <Label Content="Surname" HorizontalAlignment="Left" Height="35" Margin="10,55,0,0" Grid.Row="1" VerticalAlignment="Top" Width="138"/>
+        <Label Content="PESEL" HorizontalAlignment="Left" Height="35" Margin="10,107,0,0" Grid.Row="1" VerticalAlignment="Top" Width="138"/>
+        <Label Content="NIP" HorizontalAlignment="Left" Height="35" Margin="10,152,0,0" Grid.Row="1" VerticalAlignment="Top" Width="138"/>
+
+        <TextBox x:Name="txtPesel" HorizontalAlignment="Left" Height="36" Margin="165,106,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="187"/>
+        <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Height="36" Margin="165,54,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="187"/>
+        <TextBox x:Name="txtNip" HorizontalAlignment="Left" Height="36" Margin="165,151,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="187"/>
+        <Button x:Name="addBtn" Content="Register customer" Click="RegisterCustomerFn" HorizontalAlignment="Left" Margin="206,299,0,0" Grid.Row="1" VerticalAlignment="Top" Width="146" Height="61"/>
+        <Button x:Name="Back" Content="Back to main menu" Click="BackFn" HorizontalAlignment="Left" Margin="24,299,0,0" Grid.Row="1" VerticalAlignment="Top" Width="146" Height="61"/>
+        <TextBox x:Name="txtCity" HorizontalAlignment="Left" Height="36" Margin="165,205,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="187"/>
+        <Label Content="City" HorizontalAlignment="Left" Height="35" Margin="10,205,0,0" Grid.Row="1" VerticalAlignment="Top" Width="138"/>
+
+    </Grid>
+</Page>

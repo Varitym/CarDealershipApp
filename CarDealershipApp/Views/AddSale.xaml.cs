@@ -100,44 +100,76 @@ namespace CarDealershipApp.Views
 
         private void AddSaleFn(object sender, RoutedEventArgs e)
         {
+
             CarDealershipAppDBEntities db = new CarDealershipAppDBEntities();
 
-            var sales = from s in db.sales
-                        select new
-                        {
-                            transactionAmountC = s.car.price,
-                        };
+             var sales = from s in db.sales
+                         select new
+                         {
+                             transactionAmountC = s.car.price,
+                         };
+
+            byte onFirm = IfOnFirm((bool)(checkCompany.IsChecked));
 
             sale saleObj = new sale()
             {
                 customer_id = int.Parse(txtClient.Text),
                 dealer_id = int.Parse(txtDealer.Text),
                 car_id = int.Parse(txtCar.Text),
-                transaction_amount = GetCarPrice(int.Parse(txtCar.Text)),
-                on_company = 0,
+                transaction_amount = GetCarPrice(int.Parse(txtCar.Text), (bool)(checkCompany.IsChecked)),
+                on_company = onFirm,
 
-            };
+             };
+
+           
 
             db.sales.Add(saleObj);
             db.SaveChanges();
+            MessageBox.Show("Sale added");
 
-            
         }
 
-        private decimal GetCarPrice(int cid)
+        private decimal GetCarPrice(int car_id, bool infor)
         {
             CarDealershipAppDBEntities db = new CarDealershipAppDBEntities();
 
             var s = from c in db.cars
-                    where c.car_id == cid
+                    where c.car_id == car_id
                     select c;
             
             car obj = s.SingleOrDefault();
-            var price = obj.price;
+            decimal price = obj.price;
+            decimal multiplyValue = Convert.ToDecimal(0.81);
 
-            return price;
+            if (infor == true)
+            {
+                return price * multiplyValue;
+            }
+            else
+            {
+                return price;
+            }
+            
         }
 
         
+
+        private byte IfOnFirm(bool info)
+        {
+            if (info == true)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        private void ShowSalesFn(object sender, RoutedEventArgs e)
+        {
+            var show = new ShowSale();
+            NavigationService.Navigate(show);
+        }
     }
 }

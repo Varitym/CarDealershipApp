@@ -10,8 +10,9 @@
 
     <Grid>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="450" Stroke="Black" VerticalAlignment="Top" Width="800"/>
-        <Button Content="Car Manager" Click="ManageCarsF" HorizontalAlignment="Left" Margin="109,143,0,0" VerticalAlignment="Top" Width="185" Height="125" FontSize="24"/>
-        <Button Content="Sale" Click="SaleF" HorizontalAlignment="Left" Margin="497,143,0,0" VerticalAlignment="Top" Width="185" Height="125" FontSize="24"/>
+        <Button Content="Car Manager" Click="ManageCarsF" HorizontalAlignment="Left" Margin="25,143,0,0" VerticalAlignment="Top" Width="185" Height="125" FontSize="24"/>
+        <Button Content="Sale" Click="SaleF" HorizontalAlignment="Left" Margin="584,143,0,0" VerticalAlignment="Top" Width="185" Height="125" FontSize="24"/>
+        <Button Content="Register Customer or Dealer" Click="RegisterFn" HorizontalAlignment="Left" Margin="240,143,0,0" VerticalAlignment="Top" Width="328" Height="125" FontSize="24"/>
 
     </Grid>
 </Page>

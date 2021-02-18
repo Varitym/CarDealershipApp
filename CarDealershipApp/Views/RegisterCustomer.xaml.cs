@@ -13,48 +13,40 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
 namespace CarDealershipApp.Views
 {
     /// <summary>
-    /// Logika interakcji dla klasy AddCar.xaml
+    /// Logika interakcji dla klasy RegisterCustomer.xaml
     /// </summary>
-    public partial class AddCar : Page
+    public partial class RegisterCustomer : Page
     {
-        public AddCar()
+        public RegisterCustomer()
         {
             InitializeComponent();
         }
 
-        private void AddCarFn(object sender, RoutedEventArgs e)
+        private void RegisterCustomerFn(object sender, RoutedEventArgs e)
         {
             CarDealershipAppDBEntities db = new CarDealershipAppDBEntities();
 
-            car carObj = new car()
+            customer customerObj = new customer()
             {
-                brand = txtBrand.Text,
-                model = txtModel.Text,
-                colour = txtColour.Text,
-                prod_date = int.Parse(txtProd.Text),
-                price = decimal.Parse(txtPrice.Text),
-                quantity = int.Parse(txtQuantity.Text),
+                name = txtName.Text,
+                surname = txtSurname.Text,
+                pesel = txtPesel.Text,
+                nip = txtNip.Text,
+                city = txtCity.Text,
+
             };
 
-            db.cars.Add(carObj);
+            db.customers.Add(customerObj);
             db.SaveChanges();
-            MessageBox.Show("Car added!");
-
-        }
-
-        private void ShowFn(object sender, RoutedEventArgs e)
-        {
-            var show = new ShowWarehouse();
-            NavigationService.Navigate(show);
+            MessageBox.Show("Customer registered!");
         }
 
         private void BackFn(object sender, RoutedEventArgs e)
         {
-            var back = new CarManager();
+            var back = new Menu();
             NavigationService.Navigate(back);
         }
     }
