@@ -33,7 +33,8 @@ namespace CarDealershipApp.Views
 
         private void SaleF(object sender, RoutedEventArgs e)
         {
-
+            var sale = new Sale();
+            NavigationService.Navigate(sale);
         }
     }
 }

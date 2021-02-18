@@ -102,6 +102,9 @@
     <Compile Include="Views\AddCar.xaml.cs">
       <DependentUpon>AddCar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AddSale.xaml.cs">
+      <DependentUpon>AddSale.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CarManager.xaml.cs">
       <DependentUpon>CarManager.xaml</DependentUpon>
     </Compile>
@@ -110,6 +113,12 @@
     </Compile>
     <Compile Include="Views\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sale.xaml.cs">
+      <DependentUpon>Sale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowSale.xaml.cs">
+      <DependentUpon>ShowSale.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ShowWarehouse.xaml.cs">
       <DependentUpon>ShowWarehouse.xaml</DependentUpon>
@@ -140,6 +149,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AddSale.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CarManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -149,6 +162,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Sale.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShowSale.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -206,6 +227,9 @@
     <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
     <Resource Include="bin\Debug\EntityFramework.SqlServer.xml" />
     <Resource Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="CarDealershipAppDB_log.ldf">
+      <DependentUpon>CarDealershipAppDB.mdf</DependentUpon>
+    </Content>
     <Content Include="CarDealershipApp.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CarDealershipApp.Context.cs</LastGenOutput>
@@ -216,9 +240,7 @@
       <DependentUpon>CarDealershipApp.edmx</DependentUpon>
       <LastGenOutput>CarDealershipApp.cs</LastGenOutput>
     </Content>
-    <Content Include="CarDealershipAppDB.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="CarDealershipAppDB.mdf" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

@@ -1,0 +1,31 @@
+﻿<Page x:Class="CarDealershipApp.Views.AddSale"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CarDealershipApp.Views"
+      mc:Ignorable="d"
+      Title="AddSale" Width="984.488" Height="452.494">
+
+    <Grid Margin="0,0,0,10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1013*"/>
+            <ColumnDefinition Width="11*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#FFF4F4F5" Height="714" Stroke="Black" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <DataGrid x:Name="gridClients" HorizontalAlignment="Left" Height="153" Margin="10,10,0,0" VerticalAlignment="Top" Width="319"/>
+        <DataGrid x:Name="gridDealers" HorizontalAlignment="Left" Height="153" Margin="360,10,0,0" VerticalAlignment="Top" Width="268"/>
+        <DataGrid x:Name="gridCars" HorizontalAlignment="Left" Height="153" Margin="650,10,0,0" VerticalAlignment="Top" Width="326"/>
+        <TextBox x:Name="txtClient" HorizontalAlignment="Left" Height="46" Margin="120,187,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="128"/>
+        <TextBox x:Name="txtDealer" HorizontalAlignment="Left" Height="46" Margin="500,187,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="128"/>
+        <TextBox x:Name="txtCar" HorizontalAlignment="Left" Height="46" Margin="760,187,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="128"/>
+        <CheckBox x:Name="checkCompany" Content="On Company" HorizontalAlignment="Left" Margin="158,252,0,0" VerticalAlignment="Top"/>
+        <Button Content="Add Sale" Click="AddSaleFn" HorizontalAlignment="Left" Height="69" Margin="760,322,0,0" VerticalAlignment="Top" Width="201"/>
+        <Button Content="Back" Click="BackFn" HorizontalAlignment="Left" Height="69" Margin="47,322,0,0" VerticalAlignment="Top" Width="201"/>
+        <Label Content="Type in clients id" HorizontalAlignment="Left" Margin="10,187,0,0" VerticalAlignment="Top" Height="40" Width="105"/>
+        <Label Content="Type in dealers id" HorizontalAlignment="Left" Margin="360,187,0,0" VerticalAlignment="Top" Height="40" Width="105"/>
+        <Label Content="Type in car id" HorizontalAlignment="Left" Margin="650,187,0,0" VerticalAlignment="Top" Height="40" Width="105"/>
+
+
+    </Grid>
+</Page>
