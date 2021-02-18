@@ -21,6 +21,10 @@ namespace CarDealershipApp.Views
     /// </summary>
     public partial class AddCar : Page
     {
+
+        /// <summary>
+        /// Initializing WPF component for AddCar view
+        /// </summary>
         public AddCar()
         {
             InitializeComponent();

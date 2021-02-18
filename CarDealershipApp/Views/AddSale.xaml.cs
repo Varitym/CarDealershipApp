@@ -20,6 +20,9 @@ namespace CarDealershipApp.Views
     /// </summary>
     public partial class AddSale : Page
     {
+        /// <summary>
+        /// Initializing WPF component and then after connecting to database shows data grids
+        /// </summary>
         public AddSale()
         {
             InitializeComponent();
